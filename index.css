@@ -26,10 +26,52 @@ p {
   margin-top: 0;
 }
 
+#intro {
+  align-content: space-between;
+  align-items: flex-start;
+  display: flex;
+}
+
+#intro nav {
+  flex: 1 0 20%;
+  order: 1;
+  padding: 0 20px;
+}
+
+#intro nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#intro nav li {
+  margin-bottom: 10px;
+}
+
+#intro nav a {
+  text-decoration: none;
+}
+
+#intro nav ol ol {
+  margin-bottom: 10px;
+  padding: 0 0 0 20px;
+}
+
+#intro section {
+  order: 2;
+}
+
 .pullout {
+  align-self: center;
   background: #FFF2D1;
   border: 1px solid #FFCE56;
+  margin-left: 20px;
+  order: 3;
   padding: 20px;
+}
+
+.pullout h2 {
+  margin-top: 0;
 }
 
 .pullout div {
@@ -41,22 +83,9 @@ p {
   display: block;
 }
 
-.pullout form {
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .pullout div {
-  flex: 1;
   margin-bottom: 5px;
-  order: 2;
   padding: 0 10px;
-}
-
-.pullout .email {
-  flex: 2;
-  order: 1;
 }
 
 .pullout input {
@@ -148,9 +177,18 @@ p {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
   }
-  
-  .pullout form {
-    display: block;
+
+  #intro {
+    flex-direction: column;
+  }
+
+  #intro nav {
+    flex: 0;
+    order: 3;
+  }
+
+  .pullout {
+    margin-left: 0;
   }
 
   .layouts, .layouts div, .layouts h2, .layouts h3 {
