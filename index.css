@@ -97,6 +97,18 @@ p {
   margin: 20px auto;
 }
 
+.references {
+  -webkit-column-count: 2;
+}
+
+.references ol {
+  margin: 0;
+}
+
+.references h2 {
+  -webkit-column-span: all;
+}
+
 /* iPhone 5ish */
 @media (min-width: 320px) and (max-width: 767px) {
   body {
@@ -125,6 +137,10 @@ p {
 
   .layouts img {
     display: inline-block;
+  }
+
+  .extended-copy, .references {
+    -webkit-column-count: 1;
   }
 
   .extended-copy img {
