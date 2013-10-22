@@ -56,6 +56,33 @@ p {
   margin: 20px auto;
 }
 
+.layouts {
+  border-collapse: collapse;
+  display: table;
+}
+
+.layouts h2 {
+  display: table-caption;
+}
+
+.layouts h3 {
+  text-align: center;
+}
+
+.layouts div {
+  background: #FFF2D1;
+  border: 1px solid #ccc;
+  display: table-cell;
+  padding: 0 20px;
+  width: 33%;
+}
+
+.layouts img {
+  display: block;
+  margin: 10px auto;
+  width: 200px;
+}
+
 /* iPhone 5ish */
 @media (min-width: 320px) and (max-width: 767px) {
   body {
@@ -72,6 +99,18 @@ p {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
+  }
+
+  .layouts, .layouts div, .layouts h2, .layouts h3 {
+    background: inherit;
+    border: 0;
+    display: block;
+    text-align: inherit;
+    width: inherit;
+  }
+
+  .layouts img {
+    display: inline-block;
   }
 
   .extended-copy img {
