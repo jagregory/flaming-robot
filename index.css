@@ -41,10 +41,27 @@ p {
   display: block;
 }
 
+.pullout form {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pullout div {
+  flex: 1;
+  margin-bottom: 5px;
+  order: 2;
+  padding: 0 10px;
+}
+
+.pullout .email {
+  flex: 2;
+  order: 1;
+}
+
 .pullout input {
   font-size: 24px;
   width: 100%;
-  max-width: 300px;
 }
 
 .pullout button {
@@ -130,6 +147,10 @@ p {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
+  }
+  
+  .pullout form {
+    display: block;
   }
 
   .layouts, .layouts div, .layouts h2, .layouts h3 {
