@@ -68,6 +68,12 @@ p {
   margin-left: 20px;
   order: 3;
   padding: 20px;
+  transition: background 1s ease-in-out;
+  transition: border 1s ease-in-out;
+}
+
+.pullout h2 {
+  margin-top: 0;
 }
 
 .pullout h2 {
@@ -188,9 +194,14 @@ p {
   }
 
   .pullout {
+    background: #fff;
+    border-bottom-color: #ccc;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #ccc;
     margin-left: 0;
   }
-
+  
   .layouts, .layouts div, .layouts h2, .layouts h3 {
     background: inherit;
     border: 0;
