@@ -83,6 +83,20 @@ p {
   width: 200px;
 }
 
+.extended-copy {
+  -webkit-column-count: 2;
+}
+
+.extended-copy h2, .extended-copy h3 {
+  -webkit-column-span: all;
+}
+
+.extended-copy img {
+  -webkit-column-span: all;
+  display: block;
+  margin: 20px auto;
+}
+
 /* iPhone 5ish */
 @media (min-width: 320px) and (max-width: 767px) {
   body {
