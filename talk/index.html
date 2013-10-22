@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Responsive CSS</title>
+
+    <meta name="description" content="Responsive CSS">
+    <meta name="author" content="James Gregory">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Responsive CSS</h1>
+          <h3>Make web useful on small screen</h3>
+        </section>
+
+        <section>
+          <h2>Responsive Web Design</h2>
+          <img src="img/responsive_web_design.png" style="border:0;background:transparent;box-shadow:none;" />
+        </section>
+
+        <section>
+          <h2>Setup time</h2>
+          <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+git clone git@github.com:jagregory/flaming-robot.git
+          </code></pre>
+          <p>or</p>
+          <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+git clone https://github.com/jagregory/flaming-robot.git
+          </code></pre>
+          <p>Open in your text editor of choice.</p>  
+          </section>
+
+        <section>
+          <section>
+            <h2>Tonight</h2>
+          </section>
+
+          <section>
+            <h1>Text!</h1>
+            <p>Oooh</p>
+          </section>
+
+          <section>
+            <h1>Units!</h1>
+            <p>Ahhh</p>
+          </section>
+
+          <section>
+            <h1>Layout!</h1>
+            <p>Hmmm</p>
+          </section>
+
+          <section>
+            <h1>Movement!</h1>
+            <p>Wheee</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Meta Tags</h2>
+            <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  <meta name="viewport" content="width=320px" />
+            </code></pre>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  <meta name="viewport" content="width=device-width" />
+            </code></pre>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  <meta name="viewport" content="..., user-scalable=false" />
+            </code></pre>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  <meta name="viewport" content="..., initial-scale=1.5" />
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="img/visual_viewport.jpg" />
+          </section>
+          
+          <section>
+            <img src="img/layout_viewport.jpg" />
+          </section>
+
+          <section>
+            <img src="img/viewport_media_queries.jpg" />
+          </section>
+
+          <section>
+            <p><a href="http://mzl.la/19Bl9CF">http://mzl.la/19Bl9CF</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h1>Exercise Time</h1>
+          <p>Can you see the difference between a page with a<br />
+            <code>&lt;meta name="viewport" /&gt;</code> and one without?</p>
+          <p><small>p.s. you might have to try it on your mobile.</small></p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Media Queries</h2>
+            <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+body {
+  background: red;
+}
+            </code></pre>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+@media (max-width: 768px) {
+  body {
+    background: green;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ands</h2>
+            <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+@media (max-width: 768px) and (orientation: landscape) {
+  body {
+    background: blue;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Ors</h2>
+            <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+@media (max-width: 768px), (orientation: landscape) {
+  body {
+    background: blue;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Not</h2>
+            <pre><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+@media not monochrome {
+  body {
+    background: blue;
+  }
+}
+            </code></pre>
+          </section>
+
+          <section data-transition="none">
+            <h2>Features</h2>
+            <ul>
+              <li>color</li>
+              <li>color-index</li>
+              <li>aspect-ratio</li>
+              <li>device-aspect-ratio</li>
+              <li>device-height</li>
+              <li>device-width</li>
+              <li>height</li>
+              <li>width</li>
+              <li>monochrome</li>
+              <li>orientation</li>
+              <li>resolution</li>
+            </ul>
+          </section>
+
+          <section data-transition="none">
+            <h2>Features</h2>
+            <ul>
+              <li style="opacity:.25">color</li>
+              <li style="opacity:.25">color-index</li>
+              <li style="opacity:.25">aspect-ratio</li>
+              <li style="opacity:.25">device-aspect-ratio</li>
+              <li style="opacity:.25">device-height</li>
+              <li style="opacity:.25">device-width</li>
+              <li style="opacity:.25">height</li>
+              <li>width</li>
+              <li style="opacity:.25">monochrome</li>
+              <li style="opacity:.25">orientation</li>
+              <li style="opacity:.25">resolution</li>
+            </ul>
+          </section>
+
+          <section>
+            <p><a href="http://mzl.la/17ku5PY">http://mzl.la/17ku5PY</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h1>Exercise Time</h1>
+          <p>Use a media query to change the appearance of your page based on the screen width.</p>
+          <p class="fragment">You could target a phone. Between <code>320px</code> and <code>767px</code>.</p>
+          <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+@media (min-width: 320px) and (max-width: 767px) {
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Ghostlab</h2>
+          <p><a href="http://vanamco.com/ghostlab/">http://vanamco.com/ghostlab</a>
+        </section>
+
+        <section>
+          <section>
+            <h2>Grid systems</h2>
+            <p>What are they?</p>
+            <p>Why does everyone talk about them?</p>
+          </section>
+
+          <section>
+            <h2>Fluid columns &harr; Fixed columns</h2>
+          </section>
+
+          <section>
+            <h1>[ hello ] [ world ]</h1>
+            <div class="fragment">
+              <p>becomes</p>
+              <h1>[ hello ]<br />[ world ]</h1>
+            </div>
+          </section>
+
+          <section>
+            <dl>
+              <dt>Bootstrap</dt>
+              <dd><a href="http://getbootstrap.com">http://getbootstrap.com</a></dd>
+              <dt>Skeleton</dt>
+              <dd><a href="http://www.getskeleton.com">http://www.getskeleton.com</a></dd>
+              <dt>Foundation</dt>
+              <dd><a href="http://foundation.zurb.com">http://foundation.zurb.com</a></dd>
+              <dt>Semantic UI</dt>
+              <dd><a href="http://semantic-ui.com">http://semantic-ui.com</a></dd>
+              </dl>
+            <div class="fragment">
+              <p>p.s. All of those are also responsive frameworks</p>
+              <p>(they do more than just grids)</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>display: table</h2>
+            <p class="fragment">Like tables but with the ability to not be tables</p>
+          </section>
+
+          <section>
+            <img src="img/table_rows.png" style="border: 0; background: transparent; box-shadow: none" />
+          </section>
+
+          <section>
+            <img src="img/table_float.png" style="border: 0; background: transparent; box-shadow: none" />
+          </section>
+
+          <section>
+            <img src="img/table_columns.png" style="border: 0; background: transparent; box-shadow: none" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Multi-column text</h2>
+            <p class="fragment">Mmmmm newspapers</p>
+          </section>
+
+          <section>
+            <p style="text-align: justify">So you have a lot of text on a page. Those pesky marketing people have dumped you with a big
+              shpiel on the product. Into the page it goes, but it's looking a bit bland. A single long
+              paragraph is a bit dull after all. Wouldn't it be great if there was something you could do
+              about that?</p>
+          </section>
+
+          <section>
+            <p style="text-align: justify; -webkit-column-count: 2">So you have a lot of text on a page. Those pesky marketing people have dumped you with a big
+              shpiel on the product. Into the page it goes, but it's looking a bit bland. A single long
+              paragraph is a bit dull after all. Wouldn't it be great if there was something you could do
+              about that?</p>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+-webkit-column-count: 2;
+-moz-column-count: 2;
+column-count: 2;
+            </code></pre>
+          </section>
+
+          <section>
+            <p style="text-align: justify; -webkit-column-count: 3; -webkit-column-rule: 3px solid #ccc">So you have a lot of text on a page. Those pesky marketing people have dumped you with a big
+              shpiel on the product. Into the page it goes, but it's looking a bit bland. A single long
+              paragraph is a bit dull after all. Wouldn't it be great if there was something you could do
+              about that?</p>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+-webkit-column-count: 3;
+-webkit-column-rule: 3px solid #ccc;
+-moz-column-count: 3;
+-moz-column-rule: 3px solid #ccc;
+column-count: 3;
+column-rule: 3px solid #ccc;
+            </code></pre>
+          </section>
+
+          <section>
+            <p><a href="http://mzl.la/11og174">http://mzl.la/11og174</a></p>
+          </section>
+        </section>
+
+        <section>
+          <h1>Go play</h1>
+          <p>Use column-count to change the way your <code>&lt;section&gt;</code>'s look.</p>
+          <p class="fragment"><code>.extended-copy</code> is a good candidate too.</p>
+          <p class="fragment"><strong>Bonus points</strong> for mobile browsers only having one column.</p>
+        </section>
+
+        <section>
+          <section>
+            <h1>Units</h1>
+          </section>
+
+          <section>
+            <h2>Who remembers EMs?</h2>
+            <p class="fragment">1em = font size</p>
+          </section>
+
+          <section>
+            <p>Traditionally 1em was the maximum width of the block used for a letter on a printing press. The letter M took up
+              the full width of a block hence the name an EM.</p>
+          </section>
+
+          <section>
+            <h2>Why are EMs good?</h2>
+            <p class="fragment">Relative</p>
+          </section>
+
+          <section>
+            <h2>Why are EMs bad?</h2>
+            <p class="fragment">Relative <em class="fragment">to parent</em></p>
+          </section>
+
+          <section>
+            <h2>Who's heard of REMs?</h2>
+            <p class="fragment">1rem = font size</p>
+            <p class="fragment"><em>of the root element</em></p>
+          </section>
+
+          <section>
+            <h2>What about VWs?</h2>
+            <p class="fragment">1vw = viewport width / 1000</p>
+            <p class="fragment">1vh = viewport height / 1000</p>
+            <p class="fragment">1vmin = min(1vh, 1vm)</p>
+            <p class="fragment">1vmax = max(1vh, 1vm)</p>
+          </section>
+
+          <section>
+            <h2>Isn't that just %?</h2>
+            <p class="fragment">% is relative to a parent</p>
+            <p class="fragment">Parent is sometimes the viewport, but not always</p>
+          </section>
+
+          <section>
+            <p><a href="http://mzl.la/1ccfA4A">http://mzl.la/1ccfA4A</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Flexbox</h2>
+            <p class="fragment">Kinda like floating and tables but not.</p>
+          </section>
+
+          <section>
+            <img src="img/flex_before.png" style="border: 0; background: transparent; box-shadow: none" />
+          </section>
+
+          <section>
+            <img src="img/flex_float.png" style="border: 0; background: transparent; box-shadow: none" />
+          </section>
+
+          <section>
+            <img src="img/flex_table.png" style="border: 0; background: transparent; box-shadow: none" />
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+.container {
+  display: flex;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="img/flex_order.png" style="border: 0; background: transparent; box-shadow: none" />
+
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+.green {
+  order: 3;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="img/flex_align.png" style="border: 0; background: transparent; box-shadow: none" />
+
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+.pink {
+  align-self: flex-start;
+}
+
+.green {
+  align-self: flex-end;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <img src="img/flex_column.png" style="border: 0; background: transparent; box-shadow: none" />
+
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+.container {
+  flex-direction: column;
+}
+            </code></pre>
+          </section>
+
+          <section>
+            <p><a href="http://mzl.la/17z4umD">http://mzl.la/17z4umD</a></p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Transitions</h2>
+
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  transition: [&lt;property&gt; | all] &lt;duration&gt; &lt;function&gt; &lt;delay&gt;;
+            </code></pre>
+            <pre class="fragment"><code data-trim style="font-size: 24px; margin-top: 20px; padding: 10px">
+  transition: color 1s ease-in;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Properties</h2>
+            <p>Be careful around <code>all</code></p>
+            <ul>
+              <li>color</li>
+              <li>width</li>
+              <li>margin, padding</li>
+              <li>background</li>
+              <li>borders</li>
+              <li>etc...</li>
+            </ul>
+            <p>Not <code>display</code>.</p>
+          </section>
+
+          <section>
+            <h2>Durations</h2>
+            <ul>
+              <li>1s</li>
+              <li>0.5s</li>
+              <li>250ms</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Timing functions</h2>
+            <p><a href="http://mzl.la/184ROEi">http://mzl.la/184ROEi</a>
+            <ul>
+              <li>ease</li>
+              <li>ease-in</li>
+              <li>ease-out</li>
+              <li>ease-in-out</li>
+              <li>linear</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h1>THE END</h1>
+          <p class="fragment">Feedback please. RWD is a big topic. Tell me what I missed.</p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        dependencies: [
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
