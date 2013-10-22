@@ -22,6 +22,10 @@ h1 {
   text-align: center;
 }
 
+p {
+  margin-top: 0;
+}
+
 .pullout {
   background: #FFF2D1;
   border: 1px solid #FFCE56;
@@ -31,4 +35,9 @@ h1 {
 .pullout label {
   float: left;
   width: 140px;
+}
+
+.extended-copy img {
+  display: block;
+  margin: 20px auto;
 }
