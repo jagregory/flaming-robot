@@ -3,3 +3,14 @@ body {
 	font-size: 18px;
 	padding: 10px;
 }
+
+.pullout {
+  background: #FFF2D1;
+  padding: 20px;
+  border: 1px solid #FFCE56;
+}
+
+.pullout label {
+  width: 140px;
+  float: left;
+}
