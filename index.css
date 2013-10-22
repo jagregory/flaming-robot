@@ -84,11 +84,16 @@ p {
 }
 
 .extended-copy {
-  -webkit-column-count: 2;
+  -webkit-column-count: 3;
+  -webkit-column-rule: 1px solid #ccc;
 }
 
-.extended-copy h2, .extended-copy h3 {
+.extended-copy h2 {
   -webkit-column-span: all;
+}
+
+.extended-copy h3 {
+  margin-top: 0;
 }
 
 .extended-copy img {
@@ -145,5 +150,11 @@ p {
 
   .extended-copy img {
     width: 90vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1208px) {
+  .extended-copy {
+    -webkit-column-count: 2;
   }
 }
